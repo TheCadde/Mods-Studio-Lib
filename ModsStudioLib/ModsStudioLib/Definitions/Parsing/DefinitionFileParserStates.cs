@@ -1,8 +1,7 @@
 ﻿namespace ModsStudioLib.Definitions.Parsing {
-    public enum DefinitionParserStates {
+    public enum DefinitionFileParserStates {
         None,
         Nunit,
         Structure,
-        Variable,
     }
 }

@@ -9,14 +9,14 @@ using ModsStudioLib.Definitions.Structures;
 using ModsStudioLib.Exceptions;
 
 namespace ModsStudioLib.Definitions.Parsing {
-    public class DefinitionParser : DefinitionReader {
-        private readonly Stack<DefinitionParserStates> state = new Stack<DefinitionParserStates>();
+    public class DefinitionFileParser : DefinitionFileReader {
+        private readonly Stack<DefinitionFileParserStates> state = new Stack<DefinitionFileParserStates>();
 
-        public DefinitionParser(string filePath) : base(filePath) {
-            CurrentState = DefinitionParserStates.None;
+        public DefinitionFileParser(string filePath) : base(filePath) {
+            CurrentState = DefinitionFileParserStates.None;
         }
 
-        public DefinitionParserStates CurrentState {
+        public DefinitionFileParserStates CurrentState {
             get {
                 return state.Peek();
             }
@@ -34,7 +34,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             Ensure(DefinitionFileMarkers.BlockEnd);
             state.Pop();
 
-            if (state.Peek() != DefinitionParserStates.None)
+            if (state.Peek() != DefinitionFileParserStates.None)
                 throw new DefinitionParseException($"Not all blocks were closed when parsing defintion file or stream. Expected closing block at line {CursorLine} column {CursorColumn}.");
             return structures;
         }
@@ -45,13 +45,13 @@ namespace ModsStudioLib.Definitions.Parsing {
             var path = Read(DefinitionFileConstants.StructurePathChars);
 
             Ensure(DefinitionFileMarkers.BlockStart);
-            CurrentState = DefinitionParserStates.Structure;
+            CurrentState = DefinitionFileParserStates.Structure;
 
             var structure = CreateStructureFromTypeString(type);
             structure.StructurePath = path;
             var structureType = structure.GetType();
 
-            var valueProperties = structureType.GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(DefinitionValueAttribute))).ToList();
+            var valueProperties = structureType.GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(DefinitionValueAttribute)));
             var knownVariableProperties = new Dictionary<string, PropertyInfo>();
             var knownVariableAttributes = new Dictionary<string, DefinitionValueAttribute>();
             foreach (var valueProperty in valueProperties) {
@@ -68,7 +68,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                 var variableName = Read(DefinitionFileConstants.VariableNameChars);
                 Ensure(DefinitionFileMarkers.VariableSeparator);
                 if (knownVariableAttributes.ContainsKey(variableName))
-                    knownVariableProperties[variableName].SetValue(structure, ReadValue(knownVariableAttributes[variableName].ValueType));
+                    knownVariableProperties[variableName].SetValue(structure, ReadValue(knownVariableProperties[variableName].PropertyType));
                 else
                     AdvanceLine();
             }
@@ -85,7 +85,7 @@ namespace ModsStudioLib.Definitions.Parsing {
         private void CheckMagicMarker() {
             Ensure(DefinitionFileMarkers.MagicMarker, caseIndifferent: false, consumeWhiteSpace: false);
             Ensure(DefinitionFileMarkers.BlockStart);
-            CurrentState = DefinitionParserStates.Nunit;
+            CurrentState = DefinitionFileParserStates.Nunit;
         }
     }
 }

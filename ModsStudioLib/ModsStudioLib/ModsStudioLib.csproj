@@ -42,17 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Annotations\Annotations.cs" />
+    <Compile Include="Definitions\Attributes\DefinitionStructureAttribute.cs" />
     <Compile Include="Definitions\Attributes\DefinitionValueAttribute.cs" />
     <Compile Include="Definitions\Parsing\DefinitionFileConstants.cs" />
-    <Compile Include="Definitions\Parsing\DefinitionParser.cs" />
-    <Compile Include="Definitions\Parsing\DefinitionParserStates.cs" />
-    <Compile Include="Definitions\Parsing\DefinitionValueTypes.cs" />
-    <Compile Include="Definitions\Structures\Vehicle\Truck\AccessoryPaintjobData.cs" />
+    <Compile Include="Definitions\Parsing\DefinitionFileParser.cs" />
+    <Compile Include="Definitions\Parsing\DefinitionFileParserStates.cs" />
+    <Compile Include="Definitions\Parsing\DefinitionFileValueTypes.cs" />
+    <Compile Include="Definitions\Structures\Accessories\AccessoryPaintjobData.cs" />
     <Compile Include="Types\Float3.cs" />
     <Compile Include="Exceptions\DefinitionEndOfLineException.cs" />
     <Compile Include="Exceptions\DefinitionEndOfFileException.cs" />
     <Compile Include="Exceptions\DefinitionParseException.cs" />
-    <Compile Include="Definitions\Parsing\DefinitionReader.cs" />
+    <Compile Include="Definitions\Parsing\DefinitionFileReader.cs" />
     <Compile Include="Definitions\Structures\DefinitionStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

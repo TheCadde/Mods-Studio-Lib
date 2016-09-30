@@ -7,10 +7,10 @@ using static ModsStudioLib.Definitions.Parsing.DefinitionFileConstants;
 
 namespace ModsStudioLib.Definitions.Parsing {
 
-    public class DefinitionReader {
+    public class DefinitionFileReader {
         private readonly string[] lines;
 
-        protected DefinitionReader(string filePath) {
+        protected DefinitionFileReader(string filePath) {
             lines = File.ReadAllLines(filePath);
         }
 
@@ -128,19 +128,19 @@ namespace ModsStudioLib.Definitions.Parsing {
             CursorColumn = 0;
         }
 
-        protected object ReadValue(DefinitionValueTypes type) {
+        protected object ReadValue(Type type) {
             var readValue = "";
             var startLine = CursorLine;
             var startColumn = CursorColumn;
-            switch (type) {
-                case DefinitionValueTypes.String:
+            switch (type.Name) {
+                case nameof(String):
                     Ensure(DefinitionFileMarkers.DoubleQuote);
                     while (!Check(DefinitionFileMarkers.DoubleQuote))
                         readValue += Read();
                     Ensure(DefinitionFileMarkers.DoubleQuote);
                     return readValue;
 
-                case DefinitionValueTypes.S64:
+                case nameof(Int64):
                     try {
                         readValue = Read(SignedIntegerChars);
                         return long.Parse(readValue);
@@ -152,7 +152,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                         throw new DefinitionParseException($"Could value '{readValue}' was too large to be converted into a signed 64 bit integer in the definition file or stream on line {startLine} column {startColumn}", ex);
                     }
 
-                case DefinitionValueTypes.UInt:
+                case nameof(UInt32):
                     try {
                         readValue = Read(IntegerChars);
                         return uint.Parse(readValue);
@@ -164,7 +164,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                         throw new DefinitionParseException($"Could value '{readValue}' was too large to be converted into an unsigned 32 bit integer in the definition file or stream on line {startLine} column {startColumn}", ex);
                     }
 
-                case DefinitionValueTypes.Float:
+                case nameof(Single):
                     try {
                         readValue = Read(FloatChars);
                         return float.Parse(readValue);
@@ -176,28 +176,17 @@ namespace ModsStudioLib.Definitions.Parsing {
                         throw new DefinitionParseException($"Could value '{readValue}' was too large to be converted into an 32 bit floating point in the definition file or stream on line {startLine} column {startColumn}", ex);
                     }
 
-                case DefinitionValueTypes.Float3:
-                    try {
-                        Ensure(DefinitionFileMarkers.OpenBrace);
-                        readValue = Read(FloatChars);
-                        Ensure(DefinitionFileMarkers.Comma);
-                        var floatValue1 = float.Parse(readValue);
-                        readValue = Read(FloatChars);
-                        Ensure(DefinitionFileMarkers.Comma);
-                        var floatValue2 = float.Parse(readValue);
-                        readValue = Read(FloatChars);
-                        var floatValue3 = float.Parse(readValue);
-                        Ensure(DefinitionFileMarkers.CloseBrace);
-                        return new Float3(floatValue1, floatValue2, floatValue3);
-                    } catch (ArgumentNullException ex) {
-                        throw new DefinitionParseException($"Could not read 32 bit floating point from definition file or stream on line {startLine} column {startColumn}", ex);
-                    } catch (FormatException ex) {
-                        throw new DefinitionParseException($"Could not convert value '{readValue}' to a 32 bit floating point in the definition file or stream on line {startLine} column {startColumn}", ex);
-                    } catch (OverflowException ex) {
-                        throw new DefinitionParseException($"Could value '{readValue}' was too large to be converted into an 32 bit floating point in the definition file or stream on line {startLine} column {startColumn}", ex);
-                    }
+                case nameof(Float3):
+                    Ensure(DefinitionFileMarkers.OpenBrace);
+                    var floatValue1 = (float)ReadValue(typeof(float));
+                    Ensure(DefinitionFileMarkers.Comma);
+                    var floatValue2 = (float)ReadValue(typeof(float));
+                    Ensure(DefinitionFileMarkers.Comma);
+                    var floatValue3 = (float)ReadValue(typeof(float));
+                    Ensure(DefinitionFileMarkers.CloseBrace);
+                    return new Float3(floatValue1, floatValue2, floatValue3);
 
-                case DefinitionValueTypes.Bool:
+                case nameof(Boolean):
                     if (Check(True)) {
                         Read(True.Length);
                         return true;
@@ -210,6 +199,32 @@ namespace ModsStudioLib.Definitions.Parsing {
 
                 default:
                     throw new ArgumentException($"Unhandled type {type} when trying to read value on line {startLine} column {startColumn}.");
+            }
+        }
+
+        public static string ValueToString(object value) {
+            switch (value.GetType().Name) {
+                case nameof(String):
+                    return $"\"{value}\"";
+
+                case nameof(UInt32):
+                case nameof(Int32):
+                case nameof(UInt64):
+                case nameof(Int64):
+                    return $"{value}";
+
+                case nameof(Single):
+                    return $"{value:0.000}";
+
+                case nameof(Float3):
+                    var float3 = (Float3)value;
+                    return $"({float3.X}, {float3.Y}, {float3.Z})";
+
+                case nameof(Boolean):
+                    return $"{value.ToString().ToLower()}";
+
+                default:
+                    throw new InvalidOperationException($"Could not convert value of type {value.GetType().Name} to a string as there was no coverter available.");
             }
         }
     }

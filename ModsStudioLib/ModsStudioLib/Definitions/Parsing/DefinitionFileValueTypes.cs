@@ -2,7 +2,7 @@
 
 namespace ModsStudioLib.Definitions.Parsing {
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-    public enum DefinitionValueTypes {
+    public enum DefinitionFileValueTypes {
         String,
         StringArray,
         S64,
