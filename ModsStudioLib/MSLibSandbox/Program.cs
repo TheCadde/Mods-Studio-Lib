@@ -15,7 +15,8 @@ namespace MSLibSandbox {
                     var structures = parser.Parse();
 
                     foreach (var definitionStructure in structures) {
-                        WriteLine(definitionStructure.ToDefinitionString());
+                        var text = definitionStructure.ToDefinitionString();
+                        WriteLine(text);
                     }
                 } catch (Exception ex) {
                     WriteLine($"{ex.Message}\n{ex.StackTrace}");

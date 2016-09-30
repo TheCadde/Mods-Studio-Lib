@@ -48,6 +48,7 @@ namespace ModsStudioLib.Definitions.Parsing {
         public const string SignedIntegerChars = "-0123456789";
         public const string True = "true";
         public const string False = "false";
+
         public static readonly ReadOnlyDictionary<DefinitionFileMarkers, string> Markers = new ReadOnlyDictionary<DefinitionFileMarkers, string>(
             new Dictionary<DefinitionFileMarkers, string> {
                 {DefinitionFileMarkers.MagicMarker, "SiiNunit"},
@@ -72,9 +73,11 @@ namespace ModsStudioLib.Definitions.Parsing {
                 {DefinitionFileMarkers.DoubleQuote, "\""},
             });
 
+        public const string DefaultComment = "// DEFAULT: ";
 
         public static string GetMarker(DefinitionFileMarkers marker) {
             return Markers[marker];
         }
+
     }
 }
