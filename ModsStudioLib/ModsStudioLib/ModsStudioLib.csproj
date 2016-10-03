@@ -43,11 +43,15 @@
   <ItemGroup>
     <Compile Include="Annotations\Annotations.cs" />
     <Compile Include="Definitions\Attributes\DefinitionStructureAttribute.cs" />
-    <Compile Include="Definitions\Attributes\DefinitionValueAttribute.cs" />
+    <Compile Include="Definitions\Attributes\DefinitionStructureValueAttribute.cs" />
     <Compile Include="Definitions\Parsing\DefinitionFileConstants.cs" />
     <Compile Include="Definitions\Parsing\DefinitionFileParser.cs" />
     <Compile Include="Definitions\Parsing\DefinitionFileParserStates.cs" />
     <Compile Include="Definitions\Parsing\DefinitionFileValueTypes.cs" />
+    <Compile Include="Definitions\Parsing\DefinitionStructureDescriptor.cs" />
+    <Compile Include="Definitions\Parsing\DefinitionStructureValueDescriptor.cs" />
+    <Compile Include="Definitions\Parsing\DumpedUnitsParser.cs" />
+    <Compile Include="Definitions\Parsing\DumpedUnitsParserStates.cs" />
     <Compile Include="Definitions\Structures\Accessories\AccessoryPaintjobData.cs" />
     <Compile Include="Types\Float3.cs" />
     <Compile Include="Exceptions\DefinitionEndOfLineException.cs" />

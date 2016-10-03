@@ -21,29 +21,28 @@ namespace ModsStudioLib.Definitions.Parsing {
         private string CurrentLine {
             get
             {
-                if (lines.Length < CursorLine)
+                if (lines.Length <= CursorLine)
                     throw new DefinitionEndOfFileException($"End of file encountered when trying to read line {CursorLine}.");
                 return lines[CursorLine];
             }
         }
 
-        protected void Ensure(DefinitionFileMarkers marker, bool caseIndifferent = true, bool consumeWhiteSpace = true) {
-            Ensure(GetMarker(marker), caseIndifferent, consumeWhiteSpace);
+        protected void Ensure(DefinitionFileMarkers marker, bool caseIndifferent = true, bool consumeWhiteSpace = true, string attemptedOperationMessage = null) {
+            Ensure(GetMarker(marker), caseIndifferent, consumeWhiteSpace, attemptedOperationMessage);
         }
 
-        protected void Ensure(char marker, bool caseIndifferent = true, bool consumeWhiteSpace = true) {
-            Ensure(marker.ToString(), caseIndifferent, consumeWhiteSpace);
+        protected void Ensure(char marker, bool caseIndifferent = true, bool consumeWhiteSpace = true, string attemptedOperationMessage = null) {
+            Ensure(marker.ToString(), caseIndifferent, consumeWhiteSpace, attemptedOperationMessage);
         }
 
-        // TODO: Introduce a message stating what was being attempted here as well.
-        protected void Ensure(string search, bool caseIndifferent = true, bool consumeWhiteSpace = true) {
+        protected void Ensure(string search, bool caseIndifferent = true, bool consumeWhiteSpace = true, string attemptedOperationMessage = null) {
             if (consumeWhiteSpace)
                 ConsumeWhitespaceAndComments();
             var read = Read(search.Length, extraMessage: $" Expected '{search}'.");
 
             if ((caseIndifferent && !string.Equals(search, read, StringComparison.InvariantCultureIgnoreCase))
                 || search != read)
-                throw new DefinitionParseException($"Parsing defintion file or stream failed. Expected '{search}' but found '{read}' on line {CursorLine} column {CursorColumn}.");
+                throw new DefinitionParseException($"Parsing defintion file or stream failed. Expected '{search}' but found '{read}' on line {CursorLine} column {CursorColumn}.{(string.IsNullOrEmpty(attemptedOperationMessage) ? "" : "\nATTEMPTED: " + attemptedOperationMessage)}");
         }
 
         protected bool Check(DefinitionFileMarkers marker, bool caseIndifferent = true, bool consumeWhiteSpace = true) {
@@ -109,7 +108,11 @@ namespace ModsStudioLib.Definitions.Parsing {
         }
 
         private bool CanRead(int count) {
-            return CurrentLine.Length >= CursorColumn + count;
+            try {
+                return CurrentLine.Length >= CursorColumn + count;
+            } catch (DefinitionEndOfFileException) {
+                return false;
+            }
         }
 
         protected void Advance(int count = 1) {

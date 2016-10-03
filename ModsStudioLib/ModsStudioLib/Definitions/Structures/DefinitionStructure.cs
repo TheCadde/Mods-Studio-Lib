@@ -13,7 +13,7 @@ using static ModsStudioLib.Definitions.Parsing.DefinitionFileConstants;
 namespace ModsStudioLib.Definitions.Structures {
     public abstract class DefinitionStructure {
         private Dictionary<string, PropertyInfo> valueProperties;
-        private Dictionary<string, DefinitionValueAttribute> valueAttributes;
+        private Dictionary<string, DefinitionStructureValueAttribute> valueAttributes;
 
         public void Parse(string filePath) { }
 
@@ -31,7 +31,7 @@ namespace ModsStudioLib.Definitions.Structures {
 
         public DefinitionStructureAttribute StructureAttribute => (DefinitionStructureAttribute)GetType().GetCustomAttribute(typeof(DefinitionStructureAttribute));
 
-        public Dictionary<string, DefinitionValueAttribute> ValueAttributes {
+        public Dictionary<string, DefinitionStructureValueAttribute> ValueAttributes {
             get {
                 if (valueProperties == null || valueAttributes == null)
                     InitCollections();
@@ -43,11 +43,11 @@ namespace ModsStudioLib.Definitions.Structures {
 
         private void InitCollections() {
             valueProperties = new Dictionary<string, PropertyInfo>();
-            valueAttributes = new Dictionary<string, DefinitionValueAttribute>();
+            valueAttributes = new Dictionary<string, DefinitionStructureValueAttribute>();
 
-            var props = GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(DefinitionValueAttribute)));
+            var props = GetType().GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(DefinitionStructureValueAttribute)));
             foreach (var valueProperty in props) {
-                var attribs = (DefinitionValueAttribute)valueProperty.GetCustomAttribute(typeof(DefinitionValueAttribute));
+                var attribs = (DefinitionStructureValueAttribute)valueProperty.GetCustomAttribute(typeof(DefinitionStructureValueAttribute));
                 valueProperties[attribs.VariableName] = valueProperty;
                 valueAttributes[attribs.VariableName] = attribs;
             }

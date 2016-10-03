@@ -2,7 +2,7 @@
 
 namespace ModsStudioLib.Definitions.Attributes {
     [AttributeUsage(AttributeTargets.Property)]
-    public class DefinitionValueAttribute : Attribute {
+    public class DefinitionStructureValueAttribute : Attribute {
         public string VariableName { get; set; }
 
         public string VariableGroup { get; set; }
@@ -13,7 +13,7 @@ namespace ModsStudioLib.Definitions.Attributes {
 
         public string ValueComment { get; set; }
 
-        public DefinitionValueAttribute(string variableName, string variableGroup = null, object defaultValue = null, string defaultCommentValue = null, string comment = null) {
+        public DefinitionStructureValueAttribute(string variableName, string variableGroup = null, object defaultValue = null, string defaultCommentValue = null, string comment = null) {
             VariableName = variableName;
             VariableGroup = variableGroup;
             DefaultValue = defaultValue;

@@ -7,6 +7,7 @@ using System.Reflection;
 using ModsStudioLib.Definitions.Attributes;
 using ModsStudioLib.Definitions.Structures;
 using ModsStudioLib.Exceptions;
+using static ModsStudioLib.Definitions.Parsing.DefinitionFileConstants;
 
 namespace ModsStudioLib.Definitions.Parsing {
     public class DefinitionFileParser : DefinitionFileReader {
@@ -29,9 +30,10 @@ namespace ModsStudioLib.Definitions.Parsing {
             var structures = new List<DefinitionStructure>();
             CheckMagicMarker();
 
-            while (!Check(DefinitionFileMarkers.BlockEnd)) { structures.Add(ParseStructure()); }
+            while (!Check(DefinitionFileMarkers.BlockEnd))
+                structures.Add(ParseStructure());
 
-            Ensure(DefinitionFileMarkers.BlockEnd);
+            Ensure(DefinitionFileMarkers.BlockEnd, attemptedOperationMessage: $"Find closing block for {GetMarker(DefinitionFileMarkers.MagicMarker)}");
             state.Pop();
 
             if (state.Peek() != DefinitionFileParserStates.None)
@@ -40,22 +42,22 @@ namespace ModsStudioLib.Definitions.Parsing {
         }
 
         private DefinitionStructure ParseStructure() {
-            var type = Read(DefinitionFileConstants.StructureTypeChars);
-            Ensure(DefinitionFileMarkers.StructureSeparator);
-            var path = Read(DefinitionFileConstants.StructurePathChars);
+            var type = Read(StructureTypeChars);
+            Ensure(DefinitionFileMarkers.StructureSeparator, attemptedOperationMessage: "Finding structure separator while parsing structure descriptor.");
+            var path = Read(StructurePathChars);
 
-            Ensure(DefinitionFileMarkers.BlockStart);
+            Ensure(DefinitionFileMarkers.BlockStart, attemptedOperationMessage: "Find opening block for newly parsed structure.");
             CurrentState = DefinitionFileParserStates.Structure;
 
             var structure = CreateStructureFromTypeString(type);
             structure.StructurePath = path;
             var structureType = structure.GetType();
 
-            var valueProperties = structureType.GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(DefinitionValueAttribute)));
+            var valueProperties = structureType.GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(DefinitionStructureValueAttribute)));
             var knownVariableProperties = new Dictionary<string, PropertyInfo>();
-            var knownVariableAttributes = new Dictionary<string, DefinitionValueAttribute>();
+            var knownVariableAttributes = new Dictionary<string, DefinitionStructureValueAttribute>();
             foreach (var valueProperty in valueProperties) {
-                var attribs = (DefinitionValueAttribute)valueProperty.GetCustomAttribute(typeof(DefinitionValueAttribute));
+                var attribs = (DefinitionStructureValueAttribute)valueProperty.GetCustomAttribute(typeof(DefinitionStructureValueAttribute));
                 knownVariableProperties[attribs.VariableName] = valueProperty;
                 knownVariableAttributes[attribs.VariableName] = attribs;
             }
@@ -65,8 +67,8 @@ namespace ModsStudioLib.Definitions.Parsing {
                     state.Pop();
                     return structure;
                 }
-                var variableName = Read(DefinitionFileConstants.VariableNameChars);
-                Ensure(DefinitionFileMarkers.VariableSeparator);
+                var variableName = Read(VariableNameChars);
+                Ensure(DefinitionFileMarkers.VariableSeparator, attemptedOperationMessage: "Find variable separator while parsing variable value.");
                 if (knownVariableAttributes.ContainsKey(variableName))
                     knownVariableProperties[variableName].SetValue(structure, ReadValue(knownVariableProperties[variableName].PropertyType));
                 else
@@ -83,8 +85,8 @@ namespace ModsStudioLib.Definitions.Parsing {
         }
 
         private void CheckMagicMarker() {
-            Ensure(DefinitionFileMarkers.MagicMarker, caseIndifferent: false, consumeWhiteSpace: false);
-            Ensure(DefinitionFileMarkers.BlockStart);
+            Ensure(DefinitionFileMarkers.MagicMarker, caseIndifferent: false, consumeWhiteSpace: false, attemptedOperationMessage: $"Ensuring the first characters in file is {GetMarker(DefinitionFileMarkers.MagicMarker)}");
+            Ensure(DefinitionFileMarkers.BlockStart, attemptedOperationMessage: $"Find opening block for {GetMarker(DefinitionFileMarkers.MagicMarker)}.");
             CurrentState = DefinitionFileParserStates.Nunit;
         }
     }
