@@ -25,12 +25,7 @@ namespace MSLibSandbox {
             var parser = new DumpedUnitsParser(@"DebugFiles\Dumped units\ETS2Units 1.25.txt");
             var result = parser.Parse();
             foreach (var definitionStructureDescriptor in result.Values) {
-                WriteLine($"{definitionStructureDescriptor} {{");
-                foreach (var valueDescriptor in definitionStructureDescriptor.ValueDescriptors.Values) {
-                    WriteLine($"    {valueDescriptor}");
-                }
-                WriteLine("}");
-                WriteLine();
+                WriteLine(definitionStructureDescriptor.ToStructuredString());
             }
         }
 

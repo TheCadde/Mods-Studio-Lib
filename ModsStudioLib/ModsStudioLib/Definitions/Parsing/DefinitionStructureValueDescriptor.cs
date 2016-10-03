@@ -24,5 +24,12 @@ namespace ModsStudioLib.Definitions.Parsing {
         public override string ToString() {
             return $"{VariableDefinitionType} {VariableName}";
         }
+
+        public string ToStructuredString(int typePadding = 0, int namePadding = 0) {
+            var values = Values.Count > 0 ? $" [{string.Join(", ", Values)}]" : "" ;
+            if (values == "")
+                namePadding = 0;
+            return $"    {VariableDefinitionType.PadRight(typePadding)} {VariableName.PadRight(namePadding)}{values}";
+        }
     }
 }
