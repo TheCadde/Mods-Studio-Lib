@@ -1,0 +1,12 @@
+SiiNunit
+{
+accessory_paint_job_data : color2.scania.r.paint_job
+{
+	name: "Crimson Red"
+	price: 4160
+	unlock: 0
+	base_color : (0.151, 0.0017, 0.0075)
+	base_color_locked: true
+	stock: true
+}
+}

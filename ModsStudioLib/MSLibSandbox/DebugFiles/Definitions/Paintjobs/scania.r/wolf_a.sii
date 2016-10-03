@@ -1,0 +1,14 @@
+SiiNunit
+{
+accessory_paint_job_data : wolf_a.scania.r.paint_job
+{
+	name: "Crying Wolf"
+	price: 17000
+	unlock: 0
+	icon: "paintjob_wolf"
+	airbrush : true
+	base_color : (0.0069, 0.0036, 0.0)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_wolf_scania_a.tobj"
+	suitable_for[]: "topline.scania.r.cabin"
+}
+}

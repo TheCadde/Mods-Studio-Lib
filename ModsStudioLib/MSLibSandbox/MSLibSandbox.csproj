@@ -51,12 +51,357 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\aurora_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\aurora_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color0.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color0m.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color1.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color3.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color4.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color5.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color6.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color7.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m0.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m0.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m1.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m1.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m10.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m2.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m2.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m3.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m3.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m4.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m4.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m5.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m5.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m6.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m6.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m7.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m7.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m8.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m8.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m8_b.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m8_c.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m9.dlc_metallics.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\color_m9.dlc_metallics2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\dragon.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\fallen_angel_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\fallen_angel_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie_clover_a.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie_clover_bc.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie_harp_a.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie_harp_b.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie_harp_c.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_ie_small.dlc_flags_ie.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_sc_a.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_sc_bc.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_sc_m_a.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_sc_m_b.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_sc_m_c.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_sc_small.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_uk_a.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_uk_bc.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_uk_m_a.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_uk_m_b.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_uk_m_c.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\flag_uk_small.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\frozencave.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\grim_reaper.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\halloween_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\halloween_b.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\halloween_c.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\heavy_duty.dlc_trailers.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\heavy_duty2.dlc_trailers.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\heavy_duty3.dlc_trailers.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\kilt_a.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\kilt_bc.dlc_flags_sc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\london.dlc_flags_uk.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_0.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_1.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_2.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_3.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_4.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_5.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_6.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_flag_logo_7.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_emblem_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_emblem_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_emblem_black_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_emblem_black_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_emblem_white_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_emblem_white_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_v8_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_v8_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_vabis_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_vabis_b.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_vabis_metallic_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\paintjob_mighty_griffin_vabis_metallic_b.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\polarbear_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\polarbear_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\polarwolf_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\polarwolf_b.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\polarwolf_c.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\snowflake.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\snowman_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\snowman_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\spider.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style1.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style10.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style11.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style12.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style13.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style13_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style2_ab.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style2_c.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style3.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style4.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style6.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style7_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style7_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style8.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\style9.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\wolf_a.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DebugFiles\Definitions\Paintjobs\scania.r\wolf_bc.sii">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModsStudioLib\ModsStudioLib.csproj">
       <Project>{5a0a66aa-09be-4df2-9e58-ff23d5ecaaff}</Project>
       <Name>ModsStudioLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DebugFiles\Dumped units\ETS2Units 1.25.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

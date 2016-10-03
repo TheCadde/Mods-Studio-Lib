@@ -1,0 +1,15 @@
+SiiNunit
+{
+accessory_paint_job_data : aurora_bc.scania.r.paint_job
+{
+	name: "Northern Lights"
+	price: 17000
+	unlock: 0
+	icon: "paintjob_aurora"
+	airbrush : true
+	base_color : (0.0, 0.0018, 0.0051)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_aurora_scania_bc.tobj"
+	suitable_for[]: "normal.scania.r.cabin"
+	suitable_for[]: "highline.scania.r.cabin"
+}
+}

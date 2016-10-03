@@ -1,0 +1,18 @@
+SiiNunit
+{
+accessory_paint_job_data : sc_kilt_a.scania.r.paint_job
+{
+  name: "Kilted Warrior"
+  price: 20000
+  unlock: 0
+  icon: "paintjob_sc_kilt.dlc_flags_sc"
+
+  airbrush : true
+  base_color : (0, 0.0176, 0.0065)
+  
+  paint_job_mask : "/vehicle/truck/upgrade/paintjob/paintjob_sc_kilt_scania_a.dlc_flags_sc.tobj"
+  alternate_uvset: true
+  suitable_for[]: "topline.scania.r.cabin"
+
+}
+}

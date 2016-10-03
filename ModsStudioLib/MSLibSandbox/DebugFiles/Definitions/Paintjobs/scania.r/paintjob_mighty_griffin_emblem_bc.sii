@@ -1,0 +1,24 @@
+SiiNunit
+{
+accessory_paint_job_data : emb_bc.scania.r.paint_job
+{
+	name: "Scania Griffin Special"
+	price: 15000
+	unlock: 0
+	icon: "paintjob_mighty_griffin_emblem"
+
+	mask_r_color : (0.6104, 0.0176, 0.0742)
+	mask_r_locked: false
+	mask_g_color : (0.7083, 0.4969, 0.0006)
+	mask_g_locked: false
+	mask_b_color : (0.7454, 0.7454, 0.7454)
+	mask_b_locked: false
+	base_color :   (0.0085, 0.0193, 0.0595)
+	base_color_locked: false
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_mighty_griffin_emblem_r_bc_s_c.tobj"
+	alternate_uvset : true
+	suitable_for[]: "highline.scania.r.cabin"
+    suitable_for[]: "normal.scania.r.cabin"
+	
+}
+}

@@ -1,0 +1,13 @@
+SiiNunit
+{
+accessory_paint_job_data : dragon.scania.r.paint_job
+{
+	name: "Flaming Dragon"
+	price: 17600
+	unlock: 0
+	icon: "paintjob_dragon"
+	airbrush : true
+	base_color : (0.0, 0.0036, 0.0137)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_dragon_scania.tobj"
+}
+}

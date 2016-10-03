@@ -1,0 +1,31 @@
+SiiNunit
+{
+accessory_paint_job_data : emb_wht_bc.scania.r.paint_job
+{
+    name : "Scania Griffin Radiant Metallic"
+    price : 15000
+    unlock : 0
+    icon : "paintjob_mighty_griffin_emblem_white"
+
+    airbrush : true
+    flipflake : true
+    flip_color : (0.47, 0.47, 0.58)
+    flip_strength : 0.9
+    flake_color : (1, 1, 1)
+    flake_uvscale : 24.0
+    flake_density : 0.2
+    flake_shininess : 30.0
+    flake_clearcoat_rolloff : 3.0
+    flake_noise : "/material/custom/flake_noise.tobj"
+    base_color : (0.85, 0.85, 0.9)
+    
+    paint_job_mask : "/vehicle/truck/upgrade/paintjob/paintjob_mighty_griffin_emblem_wht_r_bc_s_c.tobj"
+    alternate_uvset : true
+    suitable_for[]: "normal.scania.r.cabin"
+	suitable_for[] : "highline.scania.r.cabin"
+	flip_color_locked: false
+    flake_color_locked: false   
+    base_color_locked: false 
+    
+}
+}

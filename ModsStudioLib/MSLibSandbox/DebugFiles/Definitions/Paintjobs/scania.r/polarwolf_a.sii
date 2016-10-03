@@ -1,0 +1,14 @@
+SiiNunit
+{
+accessory_paint_job_data : polarwolf_a.scania.r.paint_job
+{
+	name: "Night Wolf"
+	price: 17800
+	unlock: 0
+	icon: "paintjob_polarwolf"
+	airbrush : true
+	base_color : (0.0009, 0.006, 0.0103)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_polarwolf_scania_a.tobj"
+        suitable_for[]: "topline.scania.r.cabin"
+}
+}

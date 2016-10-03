@@ -1,0 +1,14 @@
+SiiNunit
+{
+accessory_paint_job_data : snowman_a.scania.r.paint_job
+{
+	name: "Happy Snowman"
+	price: 16800
+	unlock: 0
+	icon: "paintjob_snowman"
+	airbrush : true
+	base_color : (0.3762, 0.6514, 0.8307)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_snowman_scania_a.tobj"
+        suitable_for[]: "topline.scania.r.cabin"
+}
+}

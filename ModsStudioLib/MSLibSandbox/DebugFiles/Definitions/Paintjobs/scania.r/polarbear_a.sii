@@ -1,0 +1,14 @@
+SiiNunit
+{
+accessory_paint_job_data : polarbear_a.scania.r.paint_job
+{
+	name: "Mighty Polar Bear"
+	price: 17600
+	unlock: 0
+	icon: "paintjob_polarbear"
+	airbrush : true
+	base_color : (0.0065, 0.0202, 0.0307)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_polarbear_scania_a.tobj"
+        suitable_for[]: "topline.scania.r.cabin"
+}
+}

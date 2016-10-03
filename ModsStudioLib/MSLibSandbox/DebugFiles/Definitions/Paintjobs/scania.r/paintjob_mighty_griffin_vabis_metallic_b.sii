@@ -1,0 +1,27 @@
+SiiNunit
+{
+accessory_paint_job_data : vabis_m_b.scania.r.paint_job
+{
+	name : "Scania Vabis Metallic"
+	price : 15000
+	unlock : 0
+	icon : "paintjob_mighty_griffin_vabis_metallic"
+	airbrush : true
+    flipflake : true
+    flip_color : (0.004, 0.0212, 0.4019)
+    flip_strength : 0.9
+    flake_color : (0.107, 0.0251, 1)
+    flake_uvscale : 24.0
+    flake_density : 0.2
+    flake_shininess : 30.0
+    flake_clearcoat_rolloff : 3.0
+    flake_noise : "/material/custom/flake_noise.tobj"
+    base_color : (0.0085, 0.0193, 0.0595)
+	base_color_locked: false
+	flip_color_locked: false
+	flake_color_locked: false
+	paint_job_mask : "/vehicle/truck/upgrade/paintjob/paintjob_mighty_griffin_vabis_metallic_b.tobj"
+	suitable_for[]: "topline.scania.r.cabin"
+    
+}
+}

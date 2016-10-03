@@ -1,0 +1,12 @@
+SiiNunit
+{
+accessory_paint_job_data : color1.scania.r.paint_job
+{
+	name: "Poached Ivory"
+	price: 4160
+	unlock: 0
+	base_color : (0.3659, 0.3463, 0.3053)
+	base_color_locked: true
+	stock: true
+}
+}

@@ -1,0 +1,16 @@
+SiiNunit
+{
+accessory_paint_job_data : flag_sc_bc.scania.r.paint_job
+{
+	name: "Flying Scottish Flag"
+	price: 20000
+	unlock: 0
+	icon: "paintjob_flag_sc.dlc_flags_sc"
+	airbrush : true
+	base_color : (0, 0.1195, 0.4072)
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_flag_sc_scania_r_bc_s_c.dlc_flags_sc.tobj"
+    suitable_for[]: "highline.scania.r.cabin"
+    suitable_for[]: "normal.scania.r.cabin"
+	alternate_uvset: true
+}
+}

@@ -1,0 +1,20 @@
+SiiNunit
+{
+accessory_paint_job_data : style8.scania.r.paint_job
+{
+	name: "Vortex"
+	price: 45600
+	unlock: 30
+	icon: "paintjob_style8"
+	mask_r_color : (0, 0, 0)
+	mask_r_locked: true
+	mask_g_color :   (0.0076, 0.848, 0.0502)
+	mask_g_locked: false
+	mask_b_color :  (0.0076, 0.848, 0.0502)
+	mask_b_locked: false
+	base_color :    (0, 0.0066, 0)
+	base_color_locked: false
+	paint_job_mask: "/vehicle/truck/upgrade/paintjob/paintjob_008_a.tobj"
+	alternate_uvset: true
+}
+}

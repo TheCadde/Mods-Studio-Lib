@@ -1,0 +1,20 @@
+SiiNunit
+{
+accessory_paint_job_data : vabis_b.scania.r.paint_job
+{
+	name : "Scania Vabis Custom"
+	price : 15000
+	unlock : 0
+	icon : "paintjob_mighty_griffin_vabis"
+	airbrush : false
+    
+	mask_g_color : (0.0144, 0.0262, 0.0908)
+	mask_g_locked: false
+	
+	base_color :   (0.2307, 0.2307, 0.2307)
+	base_color_locked: false
+	paint_job_mask : "/vehicle/truck/upgrade/paintjob/paintjob_mighty_griffin_vabis_b.tobj"
+	suitable_for[]: "topline.scania.r.cabin"
+    
+}
+}
