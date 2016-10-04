@@ -26,16 +26,8 @@ namespace ModsStudioLib.Definitions.Parsing {
 
             SkipUninterestingBits();
 
-            while (true) {
-                if (Check(DefinitionFileMarkers.Comma))
-                    Advance();
-                if (Check(DefinitionFileMarkers.BlockEnd)) {
-                    Advance();
-                    state.Pop();
-                    break;
-                }
+            while (!CheckForEndBlock())
                 ParseStructure(result);
-            }
 
             if (Check(DefinitionFileMarkers.Comma))
                 Advance();
@@ -58,16 +50,8 @@ namespace ModsStudioLib.Definitions.Parsing {
                 TypeName = typeName,
             };
 
-            while (true) {
-                if (Check(DefinitionFileMarkers.Comma))
-                    Advance();
-                if (Check(DefinitionFileMarkers.BlockEnd)) {
-                    Advance();
-                    state.Pop();
-                    break;
-                }
+            while (!CheckForEndBlock())
                 ParseStructureBlock(result, typeName);
-            }
 
             if (Check(DefinitionFileMarkers.Comma))
                 Advance();
@@ -87,17 +71,9 @@ namespace ModsStudioLib.Definitions.Parsing {
                     Ensure(DefinitionFileMarkers.BlockStart);
                     CurrentState = DumpedUnitsParserStates.Variable;
 
-                    while (true) {
-                        if (Check(DefinitionFileMarkers.Comma))
-                            Advance();
-                        if (Check(DefinitionFileMarkers.BlockEnd)) {
-                            Advance();
-                            state.Pop();
-                            break;
-                        }
-
+                    while (!CheckForEndBlock())
                         ParseVariable(result, typeName);
-                    }
+
                     if (Check(DefinitionFileMarkers.Comma))
                         Advance();
                     break;
@@ -112,17 +88,8 @@ namespace ModsStudioLib.Definitions.Parsing {
             Ensure(DefinitionFileMarkers.BlockStart);
             CurrentState = DumpedUnitsParserStates.VariableData;
 
-            while (true) {
-                if (Check(DefinitionFileMarkers.Comma))
-                    Advance();
-                if (Check(DefinitionFileMarkers.BlockEnd)) {
-                    Advance();
-                    state.Pop();
-                    break;
-                }
-
+            while (!CheckForEndBlock())
                 ParseVariableBlock(result, typeName, variableName);
-            }
 
             if (Check(DefinitionFileMarkers.Comma))
                 Advance();
@@ -144,22 +111,26 @@ namespace ModsStudioLib.Definitions.Parsing {
 
                     Ensure(DefinitionFileMarkers.OpenSquareBracket);
                     CurrentState = DumpedUnitsParserStates.VariableEnum;
-                    while (true) {
-                        if (Check(DefinitionFileMarkers.Comma))
-                            Advance();
-                        if (Check(DefinitionFileMarkers.CloseSquareBracket)) {
-                            Advance();
-                            state.Pop();
-                            break;
-                        }
 
-                        var variableValueOption = (string)ReadValue(typeof(string));
-                        result[typeName].ValueDescriptors[variableName].Values.Add(variableValueOption);
-                    }
+                    while (!CheckForEndBlock(DefinitionFileMarkers.CloseSquareBracket))
+                        result[typeName].ValueDescriptors[variableName].Values.Add((string)ReadValue(typeof(string)));
+
                     break;
                 default:
                     throw new DefinitionParseException($"Unexpected variable block type '{dataType}' while parsing dumped units at line {CursorLine} column {CursorColumn}.");
             };
+        }
+
+        private bool CheckForEndBlock(DefinitionFileMarkers marker = DefinitionFileMarkers.BlockEnd) {
+            if (Check(DefinitionFileMarkers.Comma))
+                Advance();
+            // ReSharper disable once InvertIf
+            if (Check(marker)) {
+                Advance();
+                state.Pop();
+                return true;
+            }
+            return false;
         }
 
         private void SkipUninterestingBits() {
