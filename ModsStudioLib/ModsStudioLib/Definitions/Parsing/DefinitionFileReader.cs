@@ -14,6 +14,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             lines = File.ReadAllLines(filePath);
         }
 
+        // TODO: Make sure all thrown exceptions using this are actually referring to the correct column. Where reading started, not where it ended.
         protected int CursorColumn { get; private set; }
 
         protected int CursorLine { get; private set; }
@@ -22,7 +23,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             get
             {
                 if (lines.Length <= CursorLine)
-                    throw new DefinitionEndOfFileException($"End of file encountered when trying to read line {CursorLine}.");
+                    throw new DefinitionEndOfFileException($"End of file encountered when trying to read line {CursorLine+1}.");
                 return lines[CursorLine];
             }
         }
@@ -42,7 +43,7 @@ namespace ModsStudioLib.Definitions.Parsing {
 
             if ((caseIndifferent && !string.Equals(search, read, StringComparison.InvariantCultureIgnoreCase))
                 || search != read)
-                throw new DefinitionParseException($"Parsing defintion file or stream failed. Expected '{search}' but found '{read}' on line {CursorLine} column {CursorColumn}.{(string.IsNullOrEmpty(attemptedOperationMessage) ? "" : "\nATTEMPTED: " + attemptedOperationMessage)}");
+                throw new DefinitionParseException($"Parsing defintion file or stream failed. Expected '{search}' but found '{read}' on line {CursorLine+1} column {CursorColumn}.{(string.IsNullOrEmpty(attemptedOperationMessage) ? "" : "\nATTEMPTED: " + attemptedOperationMessage)}");
         }
 
         protected bool Check(DefinitionFileMarkers marker, bool caseIndifferent = true, bool consumeWhiteSpace = true) {

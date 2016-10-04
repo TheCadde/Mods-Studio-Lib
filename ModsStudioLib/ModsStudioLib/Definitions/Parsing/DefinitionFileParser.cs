@@ -37,7 +37,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             state.Pop();
 
             if (state.Peek() != DefinitionFileParserStates.None)
-                throw new DefinitionParseException($"Not all blocks were closed when parsing defintion file or stream. Expected closing block at line {CursorLine} column {CursorColumn}.");
+                throw new DefinitionParseException($"Not all blocks were closed when parsing defintion file or stream. Expected closing block at line {CursorLine+1} column {CursorColumn}.");
             return structures;
         }
 

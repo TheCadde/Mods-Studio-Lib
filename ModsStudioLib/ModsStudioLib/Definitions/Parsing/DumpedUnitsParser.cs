@@ -35,7 +35,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             state.Pop();
 
             if (CurrentState != DumpedUnitsParserStates.None)
-                throw new DefinitionParseException($"Not all blocks were closed when parsing dumped units file. Expected closing block at line {CursorLine} column {CursorColumn}.");
+                throw new DefinitionParseException($"Not all blocks were closed when parsing dumped units file. Expected closing block at line {CursorLine + 1} column {CursorColumn}.");
 
             return result;
         }
@@ -78,7 +78,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                         Advance();
                     break;
                 default:
-                    throw new DefinitionParseException($"Unexpected data block type '{dataBlock}' while parsing dumped units at line {CursorLine} column {CursorColumn}.");
+                    throw new DefinitionParseException($"Unexpected data block type '{dataBlock}' while parsing dumped units at line {CursorLine + 1} column {CursorColumn}.");
             }
         }
 
@@ -117,7 +117,7 @@ namespace ModsStudioLib.Definitions.Parsing {
 
                     break;
                 default:
-                    throw new DefinitionParseException($"Unexpected variable block type '{dataType}' while parsing dumped units at line {CursorLine} column {CursorColumn}.");
+                    throw new DefinitionParseException($"Unexpected variable block type '{dataType}' while parsing dumped units at line {CursorLine + 1} column {CursorColumn}.");
             };
         }
 
