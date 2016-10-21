@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
+
+using ModsStudioLib.Definitions.DefinitionTypes;
 using ModsStudioLib.Exceptions;
-using ModsStudioLib.Types;
 
 using static ModsStudioLib.Definitions.Parsing.DefinitionFileConstants;
 
@@ -180,7 +181,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                         throw new DefinitionParseException($"Could value '{readValue}' was too large to be converted into an 32 bit floating point in the definition file or stream on line {startLine} column {startColumn}", ex);
                     }
 
-                case nameof(Float3):
+                case nameof(DefinitionFloat3):
                     Ensure(DefinitionFileMarkers.OpenBrace);
                     var floatValue1 = (float)ReadValue(typeof(float));
                     Ensure(DefinitionFileMarkers.Comma);
@@ -188,7 +189,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                     Ensure(DefinitionFileMarkers.Comma);
                     var floatValue3 = (float)ReadValue(typeof(float));
                     Ensure(DefinitionFileMarkers.CloseBrace);
-                    return new Float3(floatValue1, floatValue2, floatValue3);
+                    return new DefinitionFloat3(floatValue1, floatValue2, floatValue3);
 
                 case nameof(Boolean):
                     if (Check(True)) {
@@ -220,8 +221,8 @@ namespace ModsStudioLib.Definitions.Parsing {
                 case nameof(Single):
                     return $"{value:0.000}";
 
-                case nameof(Float3):
-                    var float3 = (Float3)value;
+                case nameof(DefinitionFloat3):
+                    var float3 = (DefinitionFloat3)value;
                     return $"({float3.X}, {float3.Y}, {float3.Z})";
 
                 case nameof(Boolean):

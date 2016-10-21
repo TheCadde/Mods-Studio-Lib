@@ -53,7 +53,7 @@
     <Compile Include="Definitions\Parsing\DumpedUnitsParser.cs" />
     <Compile Include="Definitions\Parsing\DumpedUnitsParserStates.cs" />
     <Compile Include="Definitions\Structures\Accessories\AccessoryPaintjobData.cs" />
-    <Compile Include="Types\Float3.cs" />
+    <Compile Include="Definitions\DefinitionTypes\DefinitionFloat3.cs" />
     <Compile Include="Exceptions\DefinitionEndOfLineException.cs" />
     <Compile Include="Exceptions\DefinitionEndOfFileException.cs" />
     <Compile Include="Exceptions\DefinitionParseException.cs" />

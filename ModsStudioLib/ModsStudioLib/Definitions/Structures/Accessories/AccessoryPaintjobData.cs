@@ -2,7 +2,7 @@
 
 using ModsStudioLib.Annotations;
 using ModsStudioLib.Definitions.Attributes;
-using ModsStudioLib.Types;
+using ModsStudioLib.Definitions.DefinitionTypes;
 
 namespace ModsStudioLib.Definitions.Structures.Accessories {
     [DefinitionStructure("accessory_paint_job_data", "A unit describing a paintjob that can be purchased for a certain truck.")]
@@ -47,7 +47,7 @@ namespace ModsStudioLib.Definitions.Structures.Accessories {
             defaultValue: "(0, 0, 0)",
             defaultCommentValue: "(0.0, 0.0, 0.0)",
             comment: "The base color in three floating point components. Red, Green and Blue respetively. Each component should have a value between 0 (zero) and 1 (one) where 0.5 (a half) represents roughly half color tone. Note that these are in SCS color space, not RGB (linear) color space.")]
-        public Float3 BaseColor { get; set; }
+        public DefinitionFloat3 BaseColor { get; set; }
 
         [DefinitionStructureValue(
             variableName: "stock",
@@ -71,7 +71,7 @@ namespace ModsStudioLib.Definitions.Structures.Accessories {
             defaultValue: "(0, 0, 0)",
             defaultCommentValue: "(0.0, 0.0, 0.0)",
             comment: "The flip color. As you turn the camera, the base color changes to this hue in certain areas. See base_color for more details.")]
-        public Float3 FlipColor { get; set; }
+        public DefinitionFloat3 FlipColor { get; set; }
 
         [DefinitionStructureValue(
             variableName: "flake_color",
@@ -79,7 +79,7 @@ namespace ModsStudioLib.Definitions.Structures.Accessories {
             defaultValue: "(0, 0, 0)",
             defaultCommentValue: "(0.0, 0.0, 0.0)",
             comment: "The flake color. As you turn the camera, the flake / detail color changes to this hue in certain areas. See base_color for more details.")]
-        public Float3 FlakeColor { get; set; }
+        public DefinitionFloat3 FlakeColor { get; set; }
 
         [DefinitionStructureValue(
             variableName: "flip_strength",

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace ModsStudioLib.Definitions.Parsing {
-    public class DefinitionStructureValueDescriptor {
+    public class DefinitionStructureValueDescriptor : Attribute {
         public string VariableName { get; set; }
 
         public string PropertyName { get; set; }

@@ -1,9 +1,9 @@
 ﻿using ModsStudioLib.Annotations;
 
-namespace ModsStudioLib.Types {
+namespace ModsStudioLib.Definitions.DefinitionTypes {
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-    public class Float3 {
-        public static readonly Float3 Empty = new Float3();
+    public class DefinitionFloat3 {
+        public static readonly DefinitionFloat3 Empty = new DefinitionFloat3();
 
         public float Value1 { get; set; }
 
@@ -41,10 +41,10 @@ namespace ModsStudioLib.Types {
             set { Value1 = value; }
         }
 
-        private Float3() {
+        private DefinitionFloat3() {
         }
 
-        public Float3(float x, float y, float z) {
+        public DefinitionFloat3(float x, float y, float z) {
             Value1 = x;
             Value2 = y;
             Value3 = z;

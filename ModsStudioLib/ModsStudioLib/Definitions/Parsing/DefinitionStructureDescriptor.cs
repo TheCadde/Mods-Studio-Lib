@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using ModsStudioLib.Utils.Helpers;
 
 namespace ModsStudioLib.Definitions.Parsing {
-    public class DefinitionStructureDescriptor {
+    public class DefinitionStructureDescriptor : Attribute {
         public string TypeName { get; set; }
 
         public string SuperClass { get; set; }
+
+        public string Comment { get; set; }
 
         public Dictionary<string, DefinitionStructureValueDescriptor> ValueDescriptors = new Dictionary<string, DefinitionStructureValueDescriptor>();
 

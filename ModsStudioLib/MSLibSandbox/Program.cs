@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml.Serialization;
 
 using ModsStudioLib.Annotations;
 using ModsStudioLib.Definitions.Parsing;
@@ -24,9 +25,12 @@ namespace MSLibSandbox {
         private static void ParseDumpUnits() {
             var parser = new DumpedUnitsParser(@"DebugFiles\Dumped units\ETS2Units 1.25.txt");
             var result = parser.Parse();
-            foreach (var definitionStructureDescriptor in result.Values) {
-                WriteLine(definitionStructureDescriptor.ToStructuredString());
-            }
+            var serializer = new XmlSerializer(typeof(DefinitionStructureDescriptor));
+            using (var file = File.OpenWrite("db.xml"))
+                serializer.Serialize(file, result[""]); 
+            //foreach (var definitionStructureDescriptor in result.Values) {
+            //    WriteLine(definitionStructureDescriptor.ToStructuredString());
+            //}
         }
 
         private static void PrintStructures() {
