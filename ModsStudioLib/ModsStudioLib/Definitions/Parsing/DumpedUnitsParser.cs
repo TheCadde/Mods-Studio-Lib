@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 
 using ModsStudioLib.Exceptions;
+using ModsStudioLib.Types;
 
 using static ModsStudioLib.Definitions.Parsing.DefinitionFileConstants;
 
@@ -21,8 +23,8 @@ namespace ModsStudioLib.Definitions.Parsing {
             }
         }
 
-        public Dictionary<string, DefinitionStructureDescriptor> Parse() {
-            var result = new Dictionary<string, DefinitionStructureDescriptor>();
+        public SerializableDictionary<string, DefinitionStructureDescriptor> Parse() {
+            var result = new SerializableDictionary<string, DefinitionStructureDescriptor>();
 
             SkipUninterestingBits();
 
@@ -40,7 +42,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             return result;
         }
 
-        private void ParseStructure(Dictionary<string, DefinitionStructureDescriptor> result) {
+        private void ParseStructure(SerializableDictionary<string, DefinitionStructureDescriptor> result) {
             var typeName = (string)ReadValue(typeof(string));
             Ensure(DefinitionFileMarkers.StructureSeparator);
             Ensure(DefinitionFileMarkers.BlockStart);
@@ -48,6 +50,8 @@ namespace ModsStudioLib.Definitions.Parsing {
 
             result[typeName] = new DefinitionStructureDescriptor {
                 TypeName = typeName,
+                ClassName = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(typeName).Replace("_", ""),
+                Namespace =  "Definitions.Structures.Other"
             };
 
             while (!CheckForEndBlock())
@@ -57,7 +61,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                 Advance();
         }
 
-        private void ParseStructureBlock(Dictionary<string, DefinitionStructureDescriptor> result, string typeName) {
+        private void ParseStructureBlock(SerializableDictionary<string, DefinitionStructureDescriptor> result, string typeName) {
             var dataBlock = (string)ReadValue(typeof(string));
             switch (dataBlock) {
                 case "superclass":
@@ -82,7 +86,7 @@ namespace ModsStudioLib.Definitions.Parsing {
             }
         }
 
-        private void ParseVariable(Dictionary<string, DefinitionStructureDescriptor> result, string typeName) {
+        private void ParseVariable(SerializableDictionary<string, DefinitionStructureDescriptor> result, string typeName) {
             var variableName = (string)ReadValue(typeof(string));
             Ensure(DefinitionFileMarkers.StructureSeparator);
             Ensure(DefinitionFileMarkers.BlockStart);
@@ -95,14 +99,14 @@ namespace ModsStudioLib.Definitions.Parsing {
                 Advance();
         }
 
-        private void ParseVariableBlock(Dictionary<string, DefinitionStructureDescriptor> result, string typeName, string variableName) {
+        private void ParseVariableBlock(SerializableDictionary<string, DefinitionStructureDescriptor> result, string typeName, string variableName) {
             var dataType = (string)ReadValue(typeof(string));
             Ensure(DefinitionFileMarkers.StructureSeparator);
 
             switch (dataType) {
                 case "type":
                     var variableType = (string)ReadValue(typeof(string));
-                    result[typeName].ValueDescriptors[variableName] = new DefinitionStructureValueDescriptor {
+                    result[typeName].ValueDescriptors[variableName] = new DefinitionValueDescriptor {
                         VariableName = variableName,
                         VariableDefinitionType = variableType,
                     };
@@ -118,7 +122,7 @@ namespace ModsStudioLib.Definitions.Parsing {
                     break;
                 default:
                     throw new DefinitionParseException($"Unexpected variable block type '{dataType}' while parsing dumped units at line {CursorLine + 1} column {CursorColumn}.");
-            };
+            }
         }
 
         private bool CheckForEndBlock(DefinitionFileMarkers marker = DefinitionFileMarkers.BlockEnd) {
